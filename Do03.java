@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Do03 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("digite um numero");
+        int limite = sc.nextInt();
+
+        int numero = 1;
+        
+        do{
+            System.out.println(numero);
+            numero++;
+        }while(numero<=limite);
+        sc.close();
+    }
+    
+}
