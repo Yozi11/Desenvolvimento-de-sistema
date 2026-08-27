@@ -13,6 +13,7 @@ public class Desafiowhile2Menu {
             System.out.println("Escolha uma opção");
 
             opcao = sc.nextInt();
+            sc.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -28,6 +29,16 @@ public class Desafiowhile2Menu {
                     break;
                 default:
                     break;
+
+                
+            
+                    
+
+
+
+
+
+                    
             }
         }
         sc.close();
