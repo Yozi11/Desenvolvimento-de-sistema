@@ -1,11 +1,11 @@
 import java.text.ListFormat.Style;
 import java.util.Scanner;
 
-public class CarroApp {
+public class CarrosApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Carro carro1 = new Carro();
+        Carros carro1 = new Carros();
         System.out.println("informe a maca do carro");
         carro1.setMarca(sc.nextLine());
 

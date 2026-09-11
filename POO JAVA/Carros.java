@@ -1,4 +1,4 @@
-public class Carro {
+public class Carros {
     private String marca;
     private String modelo;
     private int anoFabricacao; // Ajustado para camelCase (anoFabricacao)
