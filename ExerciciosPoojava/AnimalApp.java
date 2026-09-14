@@ -1,3 +1,4 @@
+package ExerciciosPoojava;
 import java.util.Scanner;
 
 public class AnimalApp {

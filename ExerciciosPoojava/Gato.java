@@ -1,3 +1,4 @@
+package ExerciciosPoojava;
 class Gato extends Animal {
     private String cor;
 
