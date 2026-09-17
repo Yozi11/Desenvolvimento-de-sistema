@@ -1,3 +1,6 @@
+import Contato;
+
+package ExerciciosPoojava;
 public class ContatoEmergencia extends Contato {
     private String grauPrioridade;
 

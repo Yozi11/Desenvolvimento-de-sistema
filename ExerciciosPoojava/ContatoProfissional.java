@@ -1,3 +1,4 @@
+package ExerciciosPoojava;
 public class ContatoProfissional extends Contatos {
     private String empresa;
     private String cargo;

@@ -1,3 +1,6 @@
+import Contato;
+
+package ExerciciosPoojava;
 public class ContatoPessoal extends Contato {
     String parentesco;
 
