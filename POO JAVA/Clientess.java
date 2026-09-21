@@ -1,3 +1,5 @@
+import atividade1.Pagamento;
+
 public class Clientess extends Pessoa implements Pagamento {
 
     public Clientess(int codigo, String nome) {
