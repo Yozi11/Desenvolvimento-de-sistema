@@ -1,5 +1,5 @@
-public class Pagamento {
-    double calcularPagamento();
-    double calcularPagamento(double bonus);
+public interface  Pagamento {
+    double CalcularPagamento();
+    double calcularPagamento(double valor);
     
 }
