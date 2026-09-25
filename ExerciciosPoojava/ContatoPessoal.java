@@ -1,7 +1,7 @@
-import Contato;
+
 
 package ExerciciosPoojava;
-public class ContatoPessoal extends Contato {
+public class ContatoPessoal extends Contatos {
     String parentesco;
 
     public  ContatoPessoal(String nome, String numero, String parentesco){

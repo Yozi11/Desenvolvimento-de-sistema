@@ -1,4 +1,4 @@
-public package Condicionais;
+package Condicionais;
 
 import java.util.Scanner;
 
@@ -11,9 +11,9 @@ class condi01 {
         int idade = sc.nextInt();
 
         if (idade >=18){
-            System.out.println("maior de idade")
+            System.out.println("maior de idade");
         }else{
-            System.out.println("menor de idade")
+            System.out.println("menor de idade");
         }
 
         sc.close();

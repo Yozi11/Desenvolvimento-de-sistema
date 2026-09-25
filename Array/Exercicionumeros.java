@@ -1,3 +1,4 @@
+package Array;
 import java.io.SyncFailedException;
 import java.util.Scanner;
 

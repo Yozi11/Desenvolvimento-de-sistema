@@ -1,5 +1,5 @@
+package atividadepoo1;
 
-package Array;
 import java.util.Scanner;
 
 
@@ -19,7 +19,7 @@ public class Principal {
             System.out.print("Escolha uma opção: ");
             
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer do teclado
+            scanner.nextLine(); 
 
             switch (opcao) {
                 case 1: 
@@ -28,23 +28,21 @@ public class Principal {
                     System.out.print("Digite o CPF: ");
                     String cpf = scanner.nextLine();
                     
-                    System.out.println("Qual o tipo de funcionário?");
-                    System.out.println("1 - CLT");
-                    System.out.println("2 - Freelancer");
+                    System.out.println("Qual o tipo de funcionário? (1 - CLT | 2 - Freelancer)");
                     int tipo = scanner.nextInt();
                     
                     if (tipo == 1) {
                         System.out.print("Digite o salário mensal: ");
                         double salario = scanner.nextDouble();
                         funcionarioAtual = new FuncionarioCLT(nome, cpf, salario);
-                        System.out.println("Funcionário CLT cadastrado com sucesso!");
+                        System.out.println("Funcionário CLT cadastrado!");
                     } else if (tipo == 2) {
-                        System.out.print("Digite a quantidade de horas trabalhadas: ");
+                        System.out.print("Quantidade de horas: ");
                         int horas = scanner.nextInt();
-                        System.out.print("Digite o valor da hora: ");
+                        System.out.print("Valor da hora: ");
                         double valorHora = scanner.nextDouble();
                         funcionarioAtual = new FuncionarioFreelancer(nome, cpf, horas, valorHora);
-                        System.out.println("Funcionário Freelancer cadastrado com sucesso!");
+                        System.out.println("Funcionário Freelancer cadastrado!");
                     } else {
                         System.out.println("Tipo inválido!");
                     }
@@ -52,17 +50,17 @@ public class Principal {
 
                 case 2: 
                     if (funcionarioAtual != null) {
-                        System.out.println("\n--- DADOS DO FUNCIONÁRIO ---");
+                        System.out.println("\n--- DADOS ---");
                         funcionarioAtual.mostrarDados();
                     } else {
-                        System.out.println("Nenhum funcionário cadastrado ainda.");
+                        System.out.println("Nenhum funcionário cadastrado.");
                     }
                     break;
 
                 case 3: 
                     if (funcionarioAtual != null) {
                         Pagamento pag = (Pagamento) funcionarioAtual;
-                        System.out.println("Pagamento normal calculado: R$ " + pag.calcularPagamento());
+                        System.out.println("Pagamento calculado: R$ " + pag.calcularPagamento());
                     } else {
                         System.out.println("Cadastre um funcionário primeiro.");
                     }
@@ -70,23 +68,22 @@ public class Principal {
 
                 case 4: 
                     if (funcionarioAtual != null) {
-                        System.out.print("Digite o valor do bônus: R$ ");
+                        System.out.print("Digite o bônus: R$ ");
                         double bonus = scanner.nextDouble();
-                        
                         Pagamento pag = (Pagamento) funcionarioAtual;
-                        System.out.println("Pagamento com bônus calculado: R$ " + pag.calcularPagamento(bonus));
+                        System.out.println("Pagamento com bônus: R$ " + pag.calcularPagamento(bonus));
                     } else {
                         System.out.println("Cadastre um funcionário primeiro.");
                     }
                     break;
 
                 case 5: 
-                    System.out.println("Encerrando o sistema...");
+                    System.out.println("Encerrando...");
                     scanner.close();
                     return;
 
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    System.out.println("Opção inválida!");
             }
         }
     }
