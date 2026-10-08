@@ -1,4 +1,4 @@
-package Interface;
+package interfacejava;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;

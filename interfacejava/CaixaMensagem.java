@@ -1,4 +1,4 @@
-package Interface;
+package interfacejava;
 import javax.swing.JOptionPane;
 
 public class CaixaMensagem {
