@@ -102,26 +102,29 @@ public class TelaProduto extends JFrame {
         });
     }
 
-    private void cadastrar() {
-        try {
-            int id = Integer.parseInt(txtId.getText());
-            String nome = txtNome.getText();
-            String categoria = txtCategoria.getText();
-            double preco = Double.parseDouble(txtPreco.getText());
-            int qtd = Integer.parseInt(txtQuantidade.getText());
+private void cadastrar() {
+    try {
+        int id = Integer.parseInt(txtId.getText().trim());
+        String nome = txtNome.getText().trim();
+        String categoria = txtCategoria.getText().trim();
+        double preco = Double.parseDouble(txtPreco.getText().trim());
+        int qtd = Integer.parseInt(txtQuantidade.getText().trim());
 
-            if (controller.cadastrar(id, nome, categoria, preco, qtd)) {
-                JOptionPane.showMessageDialog(this, "Produto cadastrado!");
-                atualizarTabela();
-                limparCampos();
-            } else {
-                JOptionPane.showMessageDialog(this, "Erro: ID já existe!", "Erro", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Preencha os campos numéricos corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+        // O controller cuida da validação de ID duplicado e cadastro
+        boolean sucesso = ProdutoController.cadastrar(id, nome, categoria, preco, qtd);
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
+            atualizarTabela(); // Recarrega a JTable com a lista do DAO
+            limparCampos();
+        } else {
+            JOptionPane.showMessageDialog(this, "Já existe um produto com o ID " + id + "!", "Aviso", JOptionPane.WARNING_MESSAGE);
         }
-    }
 
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Preencha os campos numéricos (ID, Preço e Quantidade) corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
     private void buscar() {
         try {
             int id = Integer.parseInt(txtId.getText());
