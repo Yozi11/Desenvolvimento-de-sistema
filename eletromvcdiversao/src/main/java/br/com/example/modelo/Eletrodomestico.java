@@ -57,6 +57,11 @@ public class Eletrodomestico {
         this.preco = preco;
     }
 
+    public void add(Eletrodomestico eletrodomestico) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
+
     
     
 }

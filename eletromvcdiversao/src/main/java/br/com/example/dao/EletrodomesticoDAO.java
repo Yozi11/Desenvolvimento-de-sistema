@@ -40,8 +40,63 @@ public class EletrodomesticoDAO {
             eletrodomestico.setMarca(resultado.getString("marca"));
             eletrodomestico.setVoltagem(resultado.getString("voltagem"));
             eletrodomestico.setPreco(resultado.getDouble("preco"));
+            eletrodomestico.add(eletrodomestico);
         }
+    }catch(SQLException e){
+        System.out.println("Erro ao listar: "+e.getMessage());
+
     }
+    return eletrodomesticos;
+    }
+
+
+    public Eletrodomestico buscar(int id){
+        String sql = "SELECT id, nome, marca,voltagem,preco FROM eletrodomesticos WHERE id=?";
+
+        try(Connection conexao = Conexao.conectar();
+    PreparedStatement comando =conexao.prepareStatement(sql)){
+        comando.setInt(1, id);
+        try(ResultSet resultado = comando.executeQuery()){
+            if (resultado.next()) {
+                return new Eletrodomestico(resultado.getInt("id"),
+                resultado.getString("nome"),resultado.getString("marca"),resultado.getString("voltagem"),resultado.getDouble("preco"));
+
+                
+            }
+        }
+    }catch(SQLException e){
+        System.out.println("Erro ao buscar"+e.getMessage());
+    
+    }
+    return null;    
+    }
+    public boolean alterar(int id, String nome, String marca, String voltagem, double preco ){
+        String sql = "Update eletromesticos SET nome=?, marca=?,voltagem=?,preco=? WHERE id=?";
+
+        try(Connection conexao=Conexao.conectar();
+    PreparedStatement comando=conexao.prepareStatement(sql)){
+        comando.setString(1, nome);
+        comando.setString(2, marca);
+        comando.setString(3, voltagem);
+        comando.setDouble(4, preco);
+        comando.setInt(5, id);
+        return  comando.executeUpdate()>0;
+    }catch(SQLException e){
+        System.out.println("Erro ao alterar"+e.getMessage());
+        return false;
+    }   
+    }
+    public boolean remover(int id){
+        String sql = "DELETE FROM eletrodomesticos WHERE id=?";
+
+        try(Connection conexao=Conexao.conectar();
+    PreparedStatement comando=conexao.prepareStatement(sql)){
+        comando.setInt(1, id);
+        return comando.executeUpdate()>0;
+    }catch(SQLException e){
+        System.out.println("Erro ao remover"+e.getMessage());
+        return false;
+    }    
     }
 
     
