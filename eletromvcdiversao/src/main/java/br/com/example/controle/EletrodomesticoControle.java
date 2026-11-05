@@ -30,14 +30,5 @@ public class EletrodomesticoControle {
          return dao.remover(id);
     }
 
-    public void cadastrar(Eletrodomestico e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cadastrar'");
-    }
-
-    public void alterar(Eletrodomestico atual) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'alterar'");
-    }
-    
+  
 }

@@ -1,7 +1,10 @@
 package br.com.example;
 
+import br.com.example.view.Eletrodomesticoview;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Eletrodomesticoview view = new Eletrodomesticoview();
+        view.menu();
     }
 }
